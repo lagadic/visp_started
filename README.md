@@ -18,4 +18,4 @@ Using cmake run:
 
 To generate the documentation you can run:
 
-	make doc
+	$ make doc
