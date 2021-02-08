@@ -31,12 +31,14 @@ public:
   //! Set flag value.
   inline void setFlag(const bool &flag) {
     m_flag = flag;
+    m_test[0] = 1;
   }
 
   friend EXPORT bool operator==( const myFoo &t1, const myFoo &t2 );
 
 protected:
   bool m_flag; //!< Parameter used for...
+  int *m_test;
 };
 
 #endif

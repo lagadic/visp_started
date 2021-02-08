@@ -13,7 +13,7 @@ project(visp_started)
 set(PROJECT_INCLUDE_PREFIX "my")
 
 #-----------------------------------------------------------------------------
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.0)
 
 #-----------------------------------------------------------------------------
 # Project version number. An even minor number corresponds to releases.
@@ -74,7 +74,7 @@ set(BINARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
 # ViSP
 find_package(VISP REQUIRED)
 if(VISP_FOUND)
-  include(${VISP_USE_FILE})
+#  include(${VISP_USE_FILE})
 endif()
 
 #----------------------------------------------------------------------
