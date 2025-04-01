@@ -7,13 +7,13 @@
 # Fabien Spindler
 #
 ##############################################################################
+
+cmake_minimum_required(VERSION 3.10)
+
 project(visp_started)
 
 # The project classes prefix.
 set(PROJECT_INCLUDE_PREFIX "my")
-
-#-----------------------------------------------------------------------------
-cmake_minimum_required(VERSION 3.0)
 
 #-----------------------------------------------------------------------------
 # Project version number. An even minor number corresponds to releases.
@@ -21,7 +21,7 @@ set(PROJECT_VERSION_MAJOR 1)
 set(PROJECT_VERSION_MINOR 0)
 set(PROJECT_VERSION_PATCH 0)
 set(PROJECT_VERSION "${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}")
-set(PROJECT_VERSION_FULL "${PROJECT_VERSION}.${PROJECT_VERSION_PATCH}")      
+set(PROJECT_VERSION_FULL "${PROJECT_VERSION}.${PROJECT_VERSION_PATCH}")
 
 # where are user-specific cmake modules
 set(PROJECT_CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
@@ -93,9 +93,9 @@ link_directories(${LIBRARY_OUTPUT_PATH})
 find_package(Doxygen)
 if (DOXYGEN_FOUND)
   if(DOXYGEN_DOT_EXECUTABLE)
-    set(PROJECT_HAVE_DOT "yes")      
+    set(PROJECT_HAVE_DOT "yes")
   else()
-    set(PROJECT_HAVE_DOT "no")  
+    set(PROJECT_HAVE_DOT "no")
   endif()
   ## we need latex for doxygen because of the formulas
   find_package(LATEX)
@@ -108,7 +108,7 @@ if (DOXYGEN_FOUND)
   if    (NOT DVIPS_CONVERTER)
     message(STATUS "dvips command DVIPS_CONVERTER not found but usually required.")
   endif ()
-   
+
   configure_file(${PROJECT_SOURCE_DIR}/doc/config-doxygen.cmake
     ${PROJECT_DOC_DIR}/config-doxygen
     @ONLY )
@@ -119,7 +119,7 @@ endif()
 #----------------------------------------------------------------------
 # Generate the package dependent file include/${PROJECT_LIBRARY_NAME}/myConfig.h
 #----------------------------------------------------------------------
-configure_file(${PROJECT_SOURCE_DIR}/include/myConfig.h.cmake 
+configure_file(${PROJECT_SOURCE_DIR}/include/myConfig.h.cmake
   "${PROJECT_INCLUDE_DIR}/${PROJECT_INCLUDE_PREFIX}/myConfig.h"
 )
 
